@@ -1,0 +1,12 @@
+.required::before {
+  content: "*";
+  color: red;
+  margin-right: 4px;
+}
+.label {
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 21px;
+  color: #607b96;
+  margin-bottom: 10px;
+}

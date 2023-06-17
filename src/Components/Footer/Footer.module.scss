@@ -1,0 +1,50 @@
+.footer {
+  width: 100%;
+  background: rgba(1, 22, 39, 1);
+  font-weight: 450;
+  font-size: 16px;
+  border-top: 1px solid #1e2d3d;
+  &_Links {
+    color: rgba(96, 123, 150, 1);
+    display: flex;
+    height: 50px;
+    align-items: center;
+    &_Text {
+      padding: 14.5px 23px 14.5px 22px;
+      border-right: 1px solid #1e2d3d;
+    }
+    &_LinkedIn,
+    &_Instagram {
+      padding: 13px 14px 9px 14px;
+      border-left: 1px solid #1e2d3d;
+      border-right: 1px solid #1e2d3d;
+      cursor: default;
+      svg {
+        color: rgba(96, 123, 150, 0.51);
+        cursor: pointer;
+
+        fill: rgba(96, 123, 150, 1);
+      }
+    }
+    &_GitHub {
+      margin-left: auto;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      color: rgba(96, 123, 150, 1);
+      padding-left: 22px;
+      height: 100%;
+      border-left: 1px solid #1e2d3d;
+      cursor: default;
+      &_Icon {
+        padding: 5px 22px 0px 5px;
+      }
+      svg {
+        color: rgba(96, 123, 150, 0.51);
+        cursor: pointer;
+
+        fill: rgba(96, 123, 150, 1);
+      }
+    }
+  }
+}

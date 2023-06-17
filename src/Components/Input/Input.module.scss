@@ -1,0 +1,33 @@
+.input {
+  background: #011221;
+  border-radius: 8px;
+  padding: 18px 20px;
+  border: 1px solid #607b96;
+
+  color: #465e77;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  resize: vertical;
+
+  &:focus {
+    border-color: #dadada;
+  }
+  &:hover {
+    border-color: #dadada;
+  }
+  &:disabled {
+    background: #e8e8e8;
+    color: #465e77;
+  }
+}
+
+.error {
+  border-color: #fd3419;
+}
+.input::-webkit-input-placeholder {
+  color: #465e77;
+}
+:-ms-input-placeholder {
+  color: #465e77;
+}

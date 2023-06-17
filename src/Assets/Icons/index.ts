@@ -1,0 +1,10 @@
+export { LinkedIn } from "./LinkedIn";
+export { Instagram } from "./Instagram";
+export { Github } from "./Github";
+export { Chain } from "./Chain";
+export { Cross } from "./Cross";
+export { TriangleDown } from "./TriangleDown";
+export { TriangleRight } from "./TriangleRight";
+export { Mail } from "./Mail";
+export { Phone } from "./Phone";
+export { Resume } from "./Resume";

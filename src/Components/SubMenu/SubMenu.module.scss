@@ -1,0 +1,27 @@
+.subMenu {
+  display: flex;
+  flex-direction: column;
+  &_name {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    color: rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(30, 45, 61);
+    &_icon {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+      margin-right: 5px;
+      svg > path {
+        stroke: #ffffff;
+        fill: #ffffff;
+      }
+    }
+  }
+  &_info {
+    margin-top: 17px;
+    color: rgb(255, 255, 255);
+    // display: flex;
+  }
+}

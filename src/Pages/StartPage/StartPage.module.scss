@@ -1,0 +1,143 @@
+.startPage {
+  background-color: rgba(1, 22, 39, 1);
+  &_container {
+    // background-color: #fff;
+    height: 100%;
+
+    width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .leftContainer {
+    // background-color: red;
+    &_textWrap {
+      &_hello {
+        font-weight: 450;
+        font-size: 18px;
+        line-height: 24px;
+        color: #e5e9f0;
+        margin-bottom: 8px;
+      }
+      &_MyName {
+        font-weight: 400;
+        font-size: 62px;
+        line-height: 81px;
+        color: #e5e9f0;
+      }
+      &_progName {
+        font-weight: 450;
+        font-size: 32px;
+        line-height: 42px;
+        color: #4d5bce;
+        margin-bottom: 61px;
+
+        overflow: hidden;
+        border-right: 0.15em solid rgb(96, 123, 150);
+        white-space: nowrap;
+        -webkit-animation: typing 5s steps(50, end) forwards;
+        animation: typing 5s steps(50, end) forwards;
+        font-size: 1.6rem;
+        width: 0;
+
+        @-webkit-keyframes typing {
+          from {
+            width: 0;
+          }
+          to {
+            width: 330px;
+          }
+        }
+
+        @keyframes typing {
+          from {
+            width: 0;
+          }
+          to {
+            width: 330px;
+          }
+        }
+      }
+      &_prim {
+        font-weight: 450;
+        font-size: 16px;
+        line-height: 21px;
+        color: #607b96;
+        margin-bottom: 30px;
+      }
+      &_downloadCv {
+        text-decoration: none;
+        font-weight: 450;
+        font-size: 16px;
+        width: 150px;
+        height: 45px;
+        padding: 8px 15px;
+        background: linear-gradient(
+          149deg,
+          rgba(24, 187, 156, 1) 0%,
+          rgba(106, 57, 175, 1) 42%,
+          rgba(187, 24, 148, 1) 72%,
+          rgba(115, 53, 134, 1) 100%
+        );
+        border-radius: 50px;
+        color: black;
+        -webkit-animation: gradient 10s infinite linear;
+        animation: gradient 4s infinite linear; // 10s - скорость анимации
+        background-size: 400%; // Можно менять и подбирать интенсивность
+        @-webkit-keyframes gradient {
+          0% {
+            background-position: 80% 0%;
+          }
+          50% {
+            background-position: 20% 100%;
+          }
+          100% {
+            background-position: 80% 0%;
+          }
+        }
+        @keyframes gradient {
+          0% {
+            background-position: 80% 0%;
+          }
+          50% {
+            background-position: 20% 100%;
+          }
+          100% {
+            background-position: 80% 0%;
+          }
+        }
+      }
+    }
+  }
+  .rightContainer {
+    &_graph {
+      position: absolute;
+      width: 418px;
+      height: 454px;
+      left: 856.08px;
+      top: 87px;
+      background: #43d9ad;
+      opacity: 0.4;
+      -webkit-filter: blur(87px);
+      filter: blur(87px);
+      transform: rotate(-94.3deg);
+    }
+    &_graph2 {
+      position: absolute;
+      width: 425px;
+      height: 397px;
+      left: 1043.16px;
+      top: 237.65px;
+      background: #4d5bce;
+      opacity: 0.4;
+      -webkit-filter: blur(87px);
+      filter: blur(87px);
+      transform: rotate(13.51deg);
+    }
+  }
+}
+
+p {
+  margin: 0;
+}
