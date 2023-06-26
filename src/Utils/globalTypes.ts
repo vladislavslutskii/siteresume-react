@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { PathNames } from "../Pages/Router";
 
 export type CardPostType = {
   id: number;
@@ -9,13 +10,23 @@ export type CardPostType = {
   textCard: string;
   liveDemo: boolean;
   demoLink: string;
+  vievCode: string;
 };
 export type CardListType = Array<CardPostType>;
 
-export type MenuItemType = {
+export type ItemType = {
   id: number;
-  text: string;
+  text: string | ReactNode;
   icon: ReactNode;
+  navigateTo?: PathNames | any;
+};
+
+export type SideBarListType = Array<ItemType>;
+
+export type MenuItemType = {
+  text: string | ReactNode;
+  header: string;
+  link?: PathNames | any;
 };
 
 export type MenuListType = Array<MenuItemType>;

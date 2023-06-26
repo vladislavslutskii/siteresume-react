@@ -1,11 +1,10 @@
 .proj {
   background-color: rgba(1, 22, 39, 1);
   overflow-y: none;
-  padding-top: 70px;
+  padding: 69.5px 0px !important;
   width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
-
   &_wrap {
     height: 100%;
     max-width: 1400px;
@@ -30,4 +29,9 @@
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   background-color: rgba(1, 22, 39, 1);
+}
+@media (max-width: 1024px) {
+  .proj {
+    height: auto !important;
+  }
 }

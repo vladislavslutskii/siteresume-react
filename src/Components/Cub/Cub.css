@@ -4,7 +4,6 @@
 /* @ts-ignore */
 body {
   font-family: sans-serif;
-  /* margin: 10rem; */
 }
 
 .scene {
@@ -17,7 +16,7 @@ body {
 }
 
 .cube {
-  margin: 10rem;
+  margin: 0rem;
   width: 200px;
   height: 200px;
   position: relative;

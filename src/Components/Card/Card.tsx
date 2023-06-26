@@ -1,6 +1,12 @@
 import React, { FC } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Chain, Github } from "../../Assets/Icons";
+import { PathNames } from "../../Pages/Router";
+import {
+  setPostModalImgVisible,
+  setSelectedPost,
+} from "../../Redux/reducers/postsreducer";
 import styles from "./Card.module.scss";
 import { CardPostProps } from "./types";
 
@@ -16,7 +22,14 @@ const Card: FC<CardPostProps> = ({ post }) => {
     textCard,
     liveDemo,
     demoLink,
+    vievCode,
   } = post;
+  const dispatch = useDispatch();
+
+  const onOpenModalImg = () => {
+    dispatch(setSelectedPost(post));
+    dispatch(setPostModalImgVisible(true));
+  };
 
   return (
     <div className={styles.card}>
@@ -26,7 +39,12 @@ const Card: FC<CardPostProps> = ({ post }) => {
       </div>
       <div className={styles.card_wrap}>
         <div className={styles.card_preview}>
-          <img className={styles.card_preview_img} src={image} alt="#" />
+          <img
+            className={styles.card_preview_img}
+            onClick={onOpenModalImg}
+            src={image}
+            alt="#"
+          />
         </div>
         <div className={styles.card_info}>
           <div className={styles.card_info_textWrap}>
@@ -36,23 +54,27 @@ const Card: FC<CardPostProps> = ({ post }) => {
           <div className={styles.card_info_buttonsWrap}>
             {liveDemo === true && (
               <div className={styles.card_info_buttonsWrap_link}>
-                <Link
-                  className={styles.card_info_buttonsWrap_previewLink}
-                  target={"_blank"}
-                  to={demoLink}
-                >
-                  Live Preview
-                </Link>
+                {demoLink ? (
+                  <Link
+                    className={styles.card_info_buttonsWrap_previewLink}
+                    target={"_blank"}
+                    to={demoLink}
+                  >
+                    Live Preview
+                  </Link>
+                ) : null}
               </div>
             )}
             <div className={styles.card_info_buttonsWrap_link}>
-              <Link
-                className={styles.card_info_buttonsWrap_viewLink}
-                target={"_blank"}
-                to={""}
-              >
-                View Code
-              </Link>
+              {vievCode ? (
+                <Link
+                  className={styles.card_info_buttonsWrap_viewLink}
+                  target={"_blank"}
+                  to={vievCode}
+                >
+                  View Code
+                </Link>
+              ) : null}
             </div>
           </div>
         </div>

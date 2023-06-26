@@ -1,37 +1,27 @@
-import React, { useEffect, useState } from "react";
-import Cub from "../../Components/Cub";
-
+import React, { useState } from "react";
 import styles from "./StartPage.module.scss";
 
+// @ts-ignore
+import Bounce from "react-reveal/Bounce";
+import Cub from "../../Components/Cub";
+
 const StartPage = ({}) => {
-  const getHeight1 = document.documentElement.clientHeight - 112;
-  const [Height, setHeight] = useState(getHeight1);
-
-  window.addEventListener(
-    `unload`,
-    (event) => {
-      const getHeight = document.documentElement.clientHeight - 112;
-      console.log(getHeight);
-      setHeight(getHeight);
-    },
-    false
-  );
-
-  const divStyle = { height: Height };
   return (
-    <div className={styles.startPage} style={divStyle}>
+    <div className={styles.startPage}>
       <div className={styles.startPage_container}>
         <div className={styles.leftContainer}>
           <div className={styles.leftContainer_textWrap}>
             <p className={styles.leftContainer_textWrap_hello}>Hi all, I am</p>
-            <p className={styles.leftContainer_textWrap_MyName}>
+
+            <p className={styles.leftContainer_textWrap_myName}>
               Vladislav Slutski
             </p>
+
             <p className={styles.leftContainer_textWrap_progName}>
               &#62; Front-end developer
             </p>
 
-            <p className={styles.leftContainer_textWrap_prim}>
+            <p className={styles.leftContainer_textWrap_hint}>
               // This cube can be rotated with a mouse click
             </p>
             <a
@@ -47,8 +37,11 @@ const StartPage = ({}) => {
         <div className={styles.rightContainer}>
           <div className={styles.rightContainer_graph}></div>
           <div className={styles.rightContainer_graph2}></div>
-
-          <Cub></Cub>
+          <Bounce bottom>
+            <div className={styles.cub}>
+              <Cub></Cub>
+            </div>
+          </Bounce>
         </div>
       </div>
     </div>

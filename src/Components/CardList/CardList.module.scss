@@ -4,4 +4,7 @@
   flex-wrap: wrap;
   width: 100%;
   justify-content: center;
+  &:last-child {
+    margin-bottom: 0px !important;
+  }
 }

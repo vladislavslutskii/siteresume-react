@@ -1,13 +1,21 @@
 .app {
   background: rgba(243, 243, 243, 1);
   background: #fff;
-  padding: 0;
+  height: 100vh; /* for shorter content */
+  width: 100% !important;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 
   &_Dark {
     background-color: #313037;
+  }
+  &_header {
+    height: 50px;
+  }
+  &_main {
+    flex: 1;
+  }
+  &_footer {
+    height: 51px;
   }
 }

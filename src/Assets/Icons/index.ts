@@ -8,3 +8,4 @@ export { TriangleRight } from "./TriangleRight";
 export { Mail } from "./Mail";
 export { Phone } from "./Phone";
 export { Resume } from "./Resume";
+export { Burger } from "./Burger";

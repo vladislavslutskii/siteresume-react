@@ -12,14 +12,20 @@ import StartPage from "../StartPage";
 const PagesWrapper = () => {
   const location = useLocation();
   return (
-    <div>
-      <Header></Header>
-      {location.pathname === PathNames.Home ? (
-        <StartPage></StartPage>
-      ) : (
-        <Outlet></Outlet>
-      )}
-      <Footer></Footer>
+    <div className={styles.app}>
+      <div className={styles.app_header}>
+        <Header></Header>
+      </div>
+      <div className={styles.app_main}>
+        {location.pathname === PathNames.Home ? (
+          <StartPage></StartPage>
+        ) : (
+          <Outlet></Outlet>
+        )}
+      </div>
+      <div className={styles.app_footer}>
+        <Footer></Footer>
+      </div>
     </div>
   );
 };

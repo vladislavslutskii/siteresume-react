@@ -12,9 +12,9 @@ export const TriangleRight = ({ width, height }: any) => {
       <path
         d="M17 12L9 6V18L17 12Z"
         stroke="#000000"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

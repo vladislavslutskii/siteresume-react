@@ -3,7 +3,6 @@
   border-radius: 8px;
   padding: 18px 20px;
   border: 1px solid #607b96;
-
   color: #465e77;
   width: 100%;
   font-size: 16px;
@@ -11,10 +10,10 @@
   resize: vertical;
 
   &:focus {
-    border-color: #dadada;
+    border-color: rgba(96, 123, 150, 1);
   }
   &:hover {
-    border-color: #dadada;
+    border-color: rgba(96, 123, 150, 1);
   }
   &:disabled {
     background: #e8e8e8;

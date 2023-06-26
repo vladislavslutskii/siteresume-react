@@ -1,78 +1,81 @@
 import React, { useState } from "react";
-import { Cross, Github, Mail, Phone, Resume } from "../../Assets/Icons";
-import SubMenu from "../../Components/SubMenu";
+import { useSelector } from "react-redux";
+import { Cross, Mail, Phone, Resume } from "../../Assets/Icons";
+import Sidebar from "../../Components/Sidebar";
+
+import postsSelectors from "../../Redux/selectors/postsSelectors";
+import { PathNames } from "../Router";
 import styles from "./Aboutme.module.scss";
-// @ts-ignore
-const Aboutme = ({}) => {
+
+const Aboutme = ({ children }: any) => {
   const [openMenuInfo, setOpenMenuInfo] = useState(true);
   const [openContact, setOpenContact] = useState(true);
-
+  const selector = useSelector(postsSelectors.getText);
   const cards = [
     {
       id: 1,
       text: "bio",
       icon: <Resume width={22} height={22}></Resume>,
+      mailto: "false",
+      navigateTo: PathNames.AboutMe,
     },
     {
       id: 2,
       text: "interests",
       icon: <Resume width={22} height={22}></Resume>,
+      mailto: "false",
+      navigateTo: PathNames.interests,
     },
     {
       id: 3,
       text: "education",
       icon: <Resume width={22} height={22}></Resume>,
+      navigateTo: PathNames.education,
     },
   ];
   const contacts = [
     {
       id: 1,
-      text: "user@gmail.com",
+      text: "vladislavcoc2@gmail.com",
       icon: <Mail width={22} height={22}></Mail>,
+      navigateTo: "mailto:vladislavcoc2@gmail.com?subject=Hello&body=Hello",
     },
     {
       id: 2,
       text: "+375292688528",
       icon: <Phone width={22} height={22}></Phone>,
+      navigateTo: "tel:+375",
     },
   ];
+
   return (
     <div className={styles.aboutMe}>
+      <div className={styles.mobile_page_title}>_about-me</div>
       <div className={styles.aboutMe_menu}>
-        <SubMenu
+        <Sidebar
           onClick={() => setOpenMenuInfo(!openMenuInfo)}
           openMenu={openMenuInfo}
           label={"personal-info"}
           menuList={cards}
-        ></SubMenu>
-        <SubMenu
+        ></Sidebar>
+        <Sidebar
           onClick={() => setOpenContact(!openContact)}
           openMenu={openContact}
           label={"contacts"}
           menuList={contacts}
-        ></SubMenu>
+        ></Sidebar>
       </div>
       <div className={styles.aboutMe_info}>
-        <div className={styles.aboutMe_info_tabs}>
-          <div className={styles.aboutMe_info_tab}>
-            contacts
-            <Cross width={12} height={12}></Cross>
+        {selector && (
+          <div className={styles.aboutMe_info_tabs}>
+            <div className={styles.aboutMe_info_tab}>
+              {selector}
+              <Cross width={12} height={12}></Cross>
+            </div>
           </div>
-        </div>
-        <div className={styles.aboutMe_info_textWrap}>
-          <div className={styles.aboutMe_info_texta}>Hello</div>
-          <div className={styles.aboutMe_info_text}>
-            I have 5 years of еxperience in web * development lorem ipsum dolor
-            sit amet, * consectetur adipiscing elit, sed do eiusmod * tempor
-            incididunt ut labore et dolore * magna aliqua. Ut enim ad minim
-            veniam, * quis nostrud exercitation ullamco laboris * nisi ut
-            aliquip ex ea commodo consequat. * Duis aute irure dolor in
-            reprehenderit in * * Duis aute irure dolor in reprehenderit in *
-            voluptate velit esse cillum dolore eu fugiat * nulla pariatur.
-            Excepteur sint occaecat * officia deserunt mollit anim id est
-            laborum. */
-          </div>
-        </div>
+        )}
+
+        {children}
       </div>
     </div>
   );

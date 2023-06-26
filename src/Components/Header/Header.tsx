@@ -1,39 +1,87 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import { useThemeContext } from "../../Context/ThemeContext/Context";
-import { useLocation } from "react-router-dom";
-
+import React, { useState } from "react";
 import styles from "./Header.module.scss";
+
+import { NavLink, useLocation } from "react-router-dom";
 import { PathNames } from "../../Pages/Router";
+import classnames from "classnames";
+import { Burger } from "../../Assets/Icons";
+import { BurgerOpen } from "../../Assets/Icons/BurgerOpen";
+import Menu from "../Menu";
 
 const Header = ({}) => {
-  const { theme } = useThemeContext();
+  const [menuActive, setMenuActive] = useState(true);
+  console.log(menuActive);
+  const location = useLocation();
   return (
-    <div className={styles.header}>
-      <div className={styles.header_Logo}>
-        <p className={styles.header_Logo_Text}>Portfolio</p>
-      </div>
-      <div className={styles.headerLink_Hello}>
-        <NavLink className={styles.headerLink_NavLink} to={".open"}>
-          Hello
+    <nav className={styles.header}>
+      <div className={styles.header_logo}>
+        <NavLink className={classnames(styles.header_logo_text)} to={".open"}>
+          Portfolio
         </NavLink>
       </div>
-      <div className={styles.headerLink_About}>
-        <NavLink className={styles.headerLink_NavLink} to={PathNames.AboutMe}>
-          About Me
-        </NavLink>
-      </div>
-      <div className={styles.headerLink_Projects}>
-        <NavLink className={styles.headerLink_NavLink} to={PathNames.Projects}>
-          Projects
-        </NavLink>
-      </div>
-      <div className={styles.headerLink_Contact}>
-        <NavLink className={styles.headerLink_NavLink} to={PathNames.ContactMe}>
-          Contact Me
-        </NavLink>
-      </div>
-    </div>
+
+      <ul className={styles.headerLink}>
+        <li className={styles.headerLink_hello}>
+          <NavLink
+            className={classnames(styles.headerLink_navLink, {
+              [styles.activeLink]: location.pathname === PathNames.Home,
+            })}
+            to={".open"}
+          >
+            _hello
+          </NavLink>
+        </li>
+        <li className={styles.headerLink_about}>
+          <NavLink
+            className={classnames(styles.headerLink_navLink, {
+              [styles.activeLink]: location.pathname === PathNames.AboutMe,
+              [styles.activeLink1]: location.pathname === PathNames.interests,
+            })}
+            to={PathNames.AboutMe}
+          >
+            _about-me
+          </NavLink>
+        </li>
+        <li className={styles.headerLink_projects}>
+          <NavLink
+            className={classnames(styles.headerLink_navLink, {
+              [styles.activeLink]: location.pathname === PathNames.Projects,
+            })}
+            to={PathNames.Projects}
+          >
+            _projects
+          </NavLink>
+        </li>
+        <li className={styles.headerLink_contact}>
+          <NavLink
+            className={classnames(styles.headerLink_navLink, {
+              [styles.activeLink]: location.pathname === PathNames.ContactMe,
+            })}
+            to={PathNames.ContactMe}
+          >
+            _contact-me
+          </NavLink>
+        </li>
+        <li
+          className={styles.headerLink_burger}
+          onClick={() => setMenuActive(!menuActive)}
+        >
+          <div className={styles.headerLink_burgerButton}>
+            {!menuActive ? (
+              <BurgerOpen width={30} height={30}></BurgerOpen>
+            ) : (
+              <Burger width={30} height={30}></Burger>
+            )}
+          </div>
+        </li>
+      </ul>
+      {!menuActive ? (
+        <Menu
+          onClick={() => setMenuActive(!menuActive)}
+          openMenu={menuActive}
+        ></Menu>
+      ) : null}
+    </nav>
   );
 };
 

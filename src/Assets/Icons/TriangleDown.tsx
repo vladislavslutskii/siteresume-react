@@ -12,9 +12,9 @@ export const TriangleDown = ({ width, height }: any) => {
       <path
         d="M12 17L6 9L18 9L12 17Z"
         stroke="#000000"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

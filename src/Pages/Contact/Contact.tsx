@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
-
 import styles from "./Contact.module.scss";
-import { Cross, Github, Mail, Phone } from "../../Assets/Icons";
+import { useDispatch, useSelector } from "react-redux";
+
+import { Cross, Mail, Phone } from "../../Assets/Icons";
 import Label from "../../Components/Label";
 import Input from "../../Components/Input";
-import SubMenu from "../../Components/SubMenu";
+import Sidebar from "../../Components/Sidebar";
+import { setPostModalImgVisible } from "../../Redux/reducers/postsreducer";
+
+import postsSelectors from "../../Redux/selectors/postsSelectors";
 
 const validateEmail = (email: string) => {
   return String(email)
@@ -17,17 +21,20 @@ const validateEmail = (email: string) => {
 const cards = [
   {
     id: 1,
-    text: "user@gmail.com",
+    text: "vladislavcoc2@gmail.com",
     icon: <Mail width={22} height={22}></Mail>,
+    navigateTo: "mailto:vladislavcoc2@gmail.com?subject=Hello&body=Hello",
   },
   {
     id: 2,
-    text: "+375292688528",
+    text: "+375259028552",
     icon: <Phone width={22} height={22}></Phone>,
+    navigateTo: "tel:+375",
   },
 ];
 
 const Contact = ({}) => {
+  const dispatch = useDispatch();
   const [name, setName] = useState("");
 
   const [email, setEmail] = useState("");
@@ -36,6 +43,10 @@ const Contact = ({}) => {
 
   const [message, setMessage] = useState("");
   const [openMenu, setOpenMenu] = useState(true);
+
+  dispatch(setPostModalImgVisible(openMenu));
+  const selector = useSelector(postsSelectors.getIsModalImgVisible);
+  console.log(selector);
 
   useEffect(() => {
     if (emailTouched && !validateEmail(email)) {
@@ -49,30 +60,18 @@ const Contact = ({}) => {
     setEmailTouched(true);
   };
 
-  const getHeight1 = document.documentElement.clientHeight - 112;
-  const [Height, setHeight] = useState(getHeight1);
-
-  window.addEventListener(
-    `unload`,
-    (event) => {
-      const getHeight = document.documentElement.clientHeight - 112;
-      console.log(getHeight);
-      setHeight(getHeight);
-    },
-    false
-  );
-
-  const divStyle = { height: Height };
   return (
-    <div style={divStyle} className={styles.contactMe}>
+    <div className={styles.contactMe}>
+      <div className={styles.mobile_page_title}>_contact_me</div>
       <div className={styles.contactMe_menu}>
-        <SubMenu
+        <Sidebar
           onClick={() => setOpenMenu(!openMenu)}
           openMenu={openMenu}
           label={"contacts"}
           menuList={cards}
-        ></SubMenu>
+        ></Sidebar>
       </div>
+
       <div className={styles.contactMe_info}>
         <div className={styles.contactMe_info_tabs}>
           <div className={styles.contactMe_info_tab}>

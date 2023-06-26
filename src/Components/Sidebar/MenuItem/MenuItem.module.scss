@@ -9,6 +9,7 @@
   align-items: center;
   text-decoration: none !important;
   cursor: pointer;
+
   &_icon {
     margin-right: 5px;
   }
@@ -17,4 +18,14 @@
     fill: #607b96;
     color: #607b96;
   }
+}
+.a {
+  text-decoration: none;
+  color: #607b96;
+  &:hover {
+    color: #fff;
+  }
+}
+.activeLink {
+  color: #fff;
 }

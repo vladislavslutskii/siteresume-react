@@ -1,21 +1,20 @@
 .footer {
   width: 100%;
-  background: rgba(1, 22, 39, 1);
+  background-color: rgba(1, 22, 39, 1);
   font-weight: 450;
   font-size: 16px;
   border-top: 1px solid #1e2d3d;
-  &_Links {
+  height: 51px;
+  &_links {
     color: rgba(96, 123, 150, 1);
     display: flex;
-    height: 50px;
     align-items: center;
-    &_Text {
+    &_text {
       padding: 14.5px 23px 14.5px 22px;
       border-right: 1px solid #1e2d3d;
     }
-    &_LinkedIn,
-    &_Instagram {
-      padding: 13px 14px 9px 14px;
+    &_linkedIn,
+    &_instagram {
       border-left: 1px solid #1e2d3d;
       border-right: 1px solid #1e2d3d;
       cursor: default;
@@ -25,8 +24,15 @@
 
         fill: rgba(96, 123, 150, 1);
       }
+      display: inline-flex;
+      height: 49px;
+      padding: 12px 14px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
     }
-    &_GitHub {
+    &_gitHub {
       margin-left: auto;
       text-decoration: none;
       display: flex;
@@ -35,8 +41,9 @@
       padding-left: 22px;
       height: 100%;
       border-left: 1px solid #1e2d3d;
-      cursor: default;
-      &_Icon {
+      cursor: pointer;
+
+      &_icon {
         padding: 5px 22px 0px 5px;
       }
       svg {
@@ -46,5 +53,54 @@
         fill: rgba(96, 123, 150, 1);
       }
     }
+  }
+}
+@media (max-width: 2560px) {
+}
+@media (max-width: 1440px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 1024px) {
+}
+@media (max-width: 994px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 576px) {
+  .footer_links_gitHub {
+    padding: 13px 10px 9px 14px;
+    border-left: 1px solid #1e2d3d;
+    // border-right: 1px solid #1e2d3d;
+    cursor: default;
+    font-size: 0;
+    // margin: 0;
+    display: flex;
+
+    align-items: center;
+    height: 100%;
+    &_icon {
+      padding: 0px 0px 4px 0px;
+    }
+  }
+}
+@media (max-width: 425px) {
+}
+@media (max-width: 375px) {
+  .footer_links_text {
+    padding: 14.5px 31px 14.5px 22px;
+    border-right: 1px solid #1e2d3d;
+  }
+}
+@media (max-width: 321px) {
+  .footer_links_text {
+    padding: 14.5px 35.5px 14.5px 22px;
+    border-right: 1px solid #1e2d3d;
+  }
+}
+@media (max-width: 320px) {
+  .footer_links_text {
+    padding: 14.5px 34.5px 14.5px 22px;
+    border-right: 1px solid #1e2d3d;
   }
 }
