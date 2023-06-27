@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/siteresume-react/static/css/main.b021ff03.css",
+    "main.js": "/siteresume-react/static/js/main.94e29035.js",
+    "static/media/axit.png": "/siteresume-react/static/media/axit.61a9f69954ce11b0132a.png",
+    "static/media/resume.png": "/siteresume-react/static/media/resume.9282bb1618053209dd63.png",
+    "static/media/blogologo.png": "/siteresume-react/static/media/blogologo.c4bd9194a5574075fd14.png",
+    "static/media/1.jpg": "/siteresume-react/static/media/1.624f76cd8c4cbe766e56.jpg",
+    "static/media/blogofolio.png": "/siteresume-react/static/media/blogofolio.d88347cb4e64cb962f3e.png",
+    "static/media/5.jpg": "/siteresume-react/static/media/5.23dd60e9c2109b80cc28.jpg",
+    "static/media/6.jpg": "/siteresume-react/static/media/6.900d3549b8617459e3c7.jpg",
+    "static/media/2.jpg": "/siteresume-react/static/media/2.c8ecfb9f9774d6440cfe.jpg",
+    "static/media/4.jpg": "/siteresume-react/static/media/4.9abe724683cb902427dc.jpg",
+    "static/media/3.jpg": "/siteresume-react/static/media/3.97c484c898abb38b9fcf.jpg",
+    "static/media/todo.png": "/siteresume-react/static/media/todo.802d70757d396b8a2615.png",
+    "index.html": "/siteresume-react/index.html",
+    "main.b021ff03.css.map": "/siteresume-react/static/css/main.b021ff03.css.map",
+    "main.94e29035.js.map": "/siteresume-react/static/js/main.94e29035.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b021ff03.css",
+    "static/js/main.94e29035.js"
+  ]
+}
