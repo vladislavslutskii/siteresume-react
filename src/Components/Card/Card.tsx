@@ -1,13 +1,12 @@
 import React, { FC } from "react";
+import styles from "./Card.module.scss";
+
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { Chain, Github } from "../../Assets/Icons";
-import { PathNames } from "../../Pages/Router";
 import {
   setPostModalImgVisible,
   setSelectedPost,
 } from "../../Redux/reducers/postsreducer";
-import styles from "./Card.module.scss";
 import { CardPostProps } from "./types";
 
 const Cardstyles = { color: "rgba(96, 123, 150, 1)", marginLeft: "10px" };
@@ -24,6 +23,7 @@ const Card: FC<CardPostProps> = ({ post }) => {
     demoLink,
     vievCode,
   } = post;
+
   const dispatch = useDispatch();
 
   const onOpenModalImg = () => {

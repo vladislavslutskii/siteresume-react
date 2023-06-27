@@ -1,11 +1,10 @@
 .app {
   background: rgba(243, 243, 243, 1);
   background: #fff;
-  height: 100vh; /* for shorter content */
+  height: 100vh;
   width: 100% !important;
   display: flex;
   flex-direction: column;
-
   &_Dark {
     background-color: #313037;
   }

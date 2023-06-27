@@ -1,4 +1,4 @@
-.listMenu {
+.menu {
   position: absolute;
   z-index: 100;
   margin: 0;
@@ -7,7 +7,6 @@
   background: rgba(1, 22, 39, 1);
   width: 100%;
   top: 60px;
-  // margin-top: 50px;
   &_ul {
     padding: 0px;
   }

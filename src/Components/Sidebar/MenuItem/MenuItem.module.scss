@@ -9,7 +9,6 @@
   align-items: center;
   text-decoration: none !important;
   cursor: pointer;
-
   &_icon {
     margin-right: 5px;
   }
@@ -19,7 +18,7 @@
     color: #607b96;
   }
 }
-.a {
+.menuItem_link {
   text-decoration: none;
   color: #607b96;
   &:hover {

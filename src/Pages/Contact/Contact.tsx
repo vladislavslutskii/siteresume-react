@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Contact.module.scss";
-import { useDispatch, useSelector } from "react-redux";
 
-import { Cross, Mail, Phone } from "../../Assets/Icons";
 import Label from "../../Components/Label";
 import Input from "../../Components/Input";
 import Sidebar from "../../Components/Sidebar";
+import { useDispatch, useSelector } from "react-redux";
+import { Cross, Mail, Phone } from "../../Assets/Icons";
 import { setPostModalImgVisible } from "../../Redux/reducers/postsreducer";
-
 import postsSelectors from "../../Redux/selectors/postsSelectors";
 
 const validateEmail = (email: string) => {
@@ -29,7 +28,7 @@ const cards = [
     id: 2,
     text: "+375259028552",
     icon: <Phone width={22} height={22}></Phone>,
-    navigateTo: "tel:+375",
+    navigateTo: "tel:+375259028552",
   },
 ];
 
@@ -45,8 +44,6 @@ const Contact = ({}) => {
   const [openMenu, setOpenMenu] = useState(true);
 
   dispatch(setPostModalImgVisible(openMenu));
-  const selector = useSelector(postsSelectors.getIsModalImgVisible);
-  console.log(selector);
 
   useEffect(() => {
     if (emailTouched && !validateEmail(email)) {

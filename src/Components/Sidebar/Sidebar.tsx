@@ -1,9 +1,8 @@
 import React, { FC } from "react";
-import { TriangleDown, TriangleRight } from "../../Assets/Icons";
-
-import MenuItem from "./MenuItem/MenuItem";
 import styles from "./Sidebar.module.scss";
 
+import MenuItem from "./MenuItem/MenuItem";
+import { TriangleDown, TriangleRight } from "../../Assets/Icons";
 import { CSSTransition } from "react-transition-group";
 import { SideBarProps } from "./types";
 

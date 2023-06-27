@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
+import styles from "./Aboutme.module.scss";
+
+import Sidebar from "../../Components/Sidebar";
+import postsSelectors from "../../Redux/selectors/postsSelectors";
 import { useSelector } from "react-redux";
 import { Cross, Mail, Phone, Resume } from "../../Assets/Icons";
-import Sidebar from "../../Components/Sidebar";
-
-import postsSelectors from "../../Redux/selectors/postsSelectors";
 import { PathNames } from "../Router";
-import styles from "./Aboutme.module.scss";
 
 const Aboutme = ({ children }: any) => {
   const [openMenuInfo, setOpenMenuInfo] = useState(true);
   const [openContact, setOpenContact] = useState(true);
+
   const selector = useSelector(postsSelectors.getText);
+
   const cards = [
     {
       id: 1,
@@ -24,13 +26,13 @@ const Aboutme = ({ children }: any) => {
       text: "interests",
       icon: <Resume width={22} height={22}></Resume>,
       mailto: "false",
-      navigateTo: PathNames.interests,
+      navigateTo: PathNames.Interests,
     },
     {
       id: 3,
       text: "education",
       icon: <Resume width={22} height={22}></Resume>,
-      navigateTo: PathNames.education,
+      navigateTo: PathNames.Education,
     },
   ];
   const contacts = [
@@ -42,9 +44,9 @@ const Aboutme = ({ children }: any) => {
     },
     {
       id: 2,
-      text: "+375292688528",
+      text: "+375259028552",
       icon: <Phone width={22} height={22}></Phone>,
-      navigateTo: "tel:+375",
+      navigateTo: "tel:+375259028552",
     },
   ];
 
@@ -74,7 +76,6 @@ const Aboutme = ({ children }: any) => {
             </div>
           </div>
         )}
-
         {children}
       </div>
     </div>

@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./PagesWrapper.module.scss";
 
-import classNames from "classnames";
 import Header from "../../Components/Header";
-import { Outlet, useLocation } from "react-router-dom";
-import { PathNames } from "../Router";
-import { Theme, useThemeContext } from "../../Context/ThemeContext/Context";
 import Footer from "../../Components/Footer";
 import StartPage from "../StartPage";
+import { Outlet, useLocation } from "react-router-dom";
+import { PathNames } from "../Router";
 
 const PagesWrapper = () => {
   const location = useLocation();
+
   return (
     <div className={styles.app}>
       <div className={styles.app_header}>

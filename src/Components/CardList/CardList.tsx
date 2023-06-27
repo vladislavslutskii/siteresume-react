@@ -1,5 +1,6 @@
 import React, { FC, useState } from "react";
 import styles from "./CardList.module.scss";
+
 import classnames from "classnames";
 import Card from "../Card";
 import { CardListProps } from "./types";

@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import styles from "./Header.module.scss";
 
+import classnames from "classnames";
+import Menu from "../Menu";
 import { NavLink, useLocation } from "react-router-dom";
 import { PathNames } from "../../Pages/Router";
-import classnames from "classnames";
 import { Burger } from "../../Assets/Icons";
 import { BurgerOpen } from "../../Assets/Icons/BurgerOpen";
-import Menu from "../Menu";
 
 const Header = ({}) => {
   const [menuActive, setMenuActive] = useState(true);
-  console.log(menuActive);
   const location = useLocation();
+
   return (
     <nav className={styles.header}>
       <div className={styles.header_logo}>
@@ -35,7 +35,8 @@ const Header = ({}) => {
           <NavLink
             className={classnames(styles.headerLink_navLink, {
               [styles.activeLink]: location.pathname === PathNames.AboutMe,
-              [styles.activeLink1]: location.pathname === PathNames.interests,
+              [styles.activeLink1]: location.pathname === PathNames.Interests,
+              [styles.activeLink2]: location.pathname === PathNames.Education,
             })}
             to={PathNames.AboutMe}
           >

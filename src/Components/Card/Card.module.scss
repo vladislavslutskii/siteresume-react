@@ -31,6 +31,7 @@
     padding: 27px 21px;
     display: flex;
     flex-direction: column;
+    height: auto;
     &_textWrap {
       display: flex;
       flex-direction: column;
@@ -38,18 +39,21 @@
       align-items: center;
       color: #cccccc;
       margin-bottom: 23px;
-      overflow-x: auto;
+
       &_textCard {
         height: 70px;
         font-weight: 450;
         font-size: 17px;
         color: #607b96;
         margin-bottom: 23px;
+        overflow-y: scroll;
       }
       &_teachStack {
         font-weight: 450;
         font-size: 17px;
         color: #607b96;
+        height: 40px;
+        width: 100%;
       }
     }
     &_buttonsWrap {
@@ -88,14 +92,12 @@
     transition: 0.3s;
   }
 }
-
 @media (max-width: 425px) {
   .card {
     width: 85%;
     margin: 0 20px;
     font-size: 14px;
     margin-bottom: 40px;
-
     &_wrap {
       height: auto;
     }
@@ -104,9 +106,6 @@
 @media (max-width: 375px) {
   .card {
     width: 100%;
-  }
-  .card_info_buttonsWrap_link {
-    // padding: 5px 3px;
   }
   .card_info_buttonsWrap_viewLink {
     font-size: 12px;
@@ -119,9 +118,6 @@
   }
 }
 @media (max-width: 321px) {
-  // .card_info_buttonsWrap_link {
-  //   padding: 0px 5px;
-  // }
   .card_info_buttonsWrap_viewLink {
     font-size: 12px;
   }
@@ -132,24 +128,3 @@
     display: none;
   }
 }
-
-// @media (max-width: 2560px) {
-// }
-// @media (max-width: 1440px) {
-// }
-// @media (max-width: 1200px) {
-// }
-// @media (max-width: 1024px) {
-// }
-// @media (max-width: 994px) {
-// }
-// @media (max-width: 768px) {
-// }
-// @media (max-width: 576px) {
-// }
-// @media (max-width: 425px) {
-// }
-// @media (max-width: 375px) {
-// }
-// @media (max-width: 321px) {
-// }

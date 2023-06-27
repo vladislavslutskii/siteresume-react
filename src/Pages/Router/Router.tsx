@@ -1,11 +1,10 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Bio from "../../Components/Bio";
-
+import ShowInfo from "../../Components/ShowInfo";
 import Aboutme from "../AboutMe/Aboutme";
 import Contact from "../Contact";
 import PagesWrapper from "../PagesWrapper";
 import Projects from "../Projects";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 export enum PathNames {
   Home = `/`,
@@ -15,9 +14,8 @@ export enum PathNames {
   Projects = "/projects",
   ContactMe = "/contactme",
   AboutMe = "/aboutme/bio",
-  // bio = "/aboutme/bio",
-  interests = "/aboutme/interests",
-  education = "/aboutme/education",
+  Interests = "/aboutme/interests",
+  Education = "/aboutme/education",
 }
 const cards = [
   { name: "bio", helloText: "Test1", text: "Test1" },
@@ -41,31 +39,30 @@ const Router = () => {
             path={PathNames.AboutMe}
             element={
               <Aboutme>
-                <Bio list={cards[0]}></Bio>
+                <ShowInfo data={cards[0]}></ShowInfo>
               </Aboutme>
             }
           ></Route>
           <Route
-            path={PathNames.interests}
+            path={PathNames.Interests}
             element={
               <Aboutme>
-                <Bio list={cards[1]}></Bio>
+                <ShowInfo data={cards[1]}></ShowInfo>
               </Aboutme>
             }
           ></Route>
           <Route
-            path={PathNames.education}
+            path={PathNames.Education}
             element={
               <Aboutme>
-                <Bio list={cards[2]}></Bio>
+                <ShowInfo data={cards[2]}></ShowInfo>
               </Aboutme>
             }
           ></Route>
-          {/* <Route path={PathNames.AboutMe} element={<AboutMe></AboutMe>}></Route> */}
         </Route>
         <Route
           path={`*`}
-          element={<Navigate to={PathNames.Home}></Navigate>} // navigate делает редирект
+          element={<Navigate to={PathNames.Home}></Navigate>}
         ></Route>
       </Routes>
     </BrowserRouter>

@@ -1,12 +1,12 @@
 import * as React from "react";
 import "./Cub.css";
 import Cube from "react-3d-cube";
-import img1 from "../../Utils/Photos/1.jpg";
-import img2 from "../../Utils/Photos/2.jpg";
-import img3 from "../../Utils/Photos/3.jpg";
-import img4 from "../../Utils/Photos/4.jpg";
-import img5 from "../../Utils/Photos/5.jpg";
-import img6 from "../../Utils/Photos/6.jpg";
+import img1 from "../../Assets/Photos/1.jpg";
+import img2 from "../../Assets/Photos/2.jpg";
+import img3 from "../../Assets/Photos/3.jpg";
+import img4 from "../../Assets/Photos/4.jpg";
+import img5 from "../../Assets/Photos/5.jpg";
+import img6 from "../../Assets/Photos/6.jpg";
 
 class LogoCube extends React.Component {
   render() {
