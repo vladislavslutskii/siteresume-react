@@ -103,6 +103,11 @@
     }
   }
 }
+@media (max-width: 405px) {
+  .card_info_textWrap_teachStack {
+    height: auto;
+  }
+}
 @media (max-width: 375px) {
   .card {
     width: 100%;
@@ -115,6 +120,9 @@
   }
   .card_info_textWrap_teachStack {
     display: none;
+  }
+  .card_info_textWrap_textCard {
+    margin: 0;
   }
 }
 @media (max-width: 321px) {

@@ -12,7 +12,6 @@ const MenuItem: FC<ItemProps> = ({ items }) => {
   return (
     <div className={styles.menuItem}>
       <div className={styles.menuItem_icon}>{icon}</div>
-
       <Link
         to={`${navigateTo}`}
         className={classnames(styles.menuItem_link, {
