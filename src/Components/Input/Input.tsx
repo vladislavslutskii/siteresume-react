@@ -13,6 +13,7 @@ const Input: FC<InputProps> = ({
   disabled,
   error,
   onBlur,
+  name,
 }) => {
   const onInputChange = (evt: ChangeEvent<HTMLInputElement>) => {
     onChange(evt.target.value);
@@ -22,6 +23,7 @@ const Input: FC<InputProps> = ({
   };
   return type !== "textarea" ? (
     <input
+      name={name}
       type={type}
       onChange={onInputChange}
       value={value}
@@ -32,6 +34,7 @@ const Input: FC<InputProps> = ({
     />
   ) : (
     <textarea
+      name={name}
       onChange={onTextAreaChange}
       value={value}
       onBlur={onBlur}

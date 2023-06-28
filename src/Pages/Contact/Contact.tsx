@@ -77,11 +77,17 @@ const Contact = ({}) => {
           </div>
         </div>
         <div className={styles.contactMe_info_formACode}>
-          <div className={styles.contactMe_info_form}>
+          <form
+            action="./sent.php"
+            method="POST"
+            className={styles.contactMe_info_form}
+          >
             <div className={styles.formContainer}>
               <div className={styles.formContainer__inputContainer}>
                 <Label title={"_name"} />
                 <Input
+                  type="text"
+                  name="name"
                   value={name}
                   onChange={setName}
                   placeholder={"Your name"}
@@ -91,6 +97,7 @@ const Contact = ({}) => {
               <div className={styles.formContainer__inputContainer}>
                 <Label title={"_email"} />
                 <Input
+                  type="text"
                   value={email}
                   onChange={setEmail}
                   placeholder={"Your email"}
@@ -103,6 +110,7 @@ const Contact = ({}) => {
                 <Label title={"_message"} />
                 <Input
                   type={"textarea"}
+                  name="tel"
                   value={onmessage}
                   onChange={setMessage}
                   placeholder={"Your message"}
@@ -111,12 +119,15 @@ const Contact = ({}) => {
               </div>
 
               <div className={styles.formContainer__buttonContainer}>
-                <a className={styles.formContainer__buttonContainer_button}>
+                <button
+                  type="submit"
+                  className={styles.formContainer__buttonContainer_button}
+                >
                   submit-message
-                </a>
+                </button>
               </div>
             </div>
-          </div>
+          </form>
           <div className={styles.contactMe_info_code}>
             <div className={styles.contactMe_info_codeWrap}>
               <div className={styles.contactMe_info_codeWrap_number}>

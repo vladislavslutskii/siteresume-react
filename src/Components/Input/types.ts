@@ -7,4 +7,5 @@ export type InputProps = {
   error?: boolean;
   className?: string;
   type?: string;
+  name?: string;
 };
