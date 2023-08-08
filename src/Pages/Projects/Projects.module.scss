@@ -1,8 +1,9 @@
 .projects {
   background-color: rgba(1, 22, 39, 1);
   overflow-y: none;
-  padding: 69.5px 0px !important;
-  width: 100%;
+  padding: 70px 0px !important;
+  width: auto;
+  // height: auto;
   overflow-y: scroll;
   overflow-x: hidden;
   &_wrap {

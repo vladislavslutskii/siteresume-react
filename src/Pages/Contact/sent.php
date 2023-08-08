@@ -11,7 +11,7 @@ $tel = urlencode($tel);
 $name = trim($name);
 $tel = trim($tel);
 
-if (mail("onuha@mailto.plus",
+if (mail("vladislavcoc2@gmail.com",
      "Pest Reject",
      "Имя: ".$name."\n".
      "Телефон ".$tel,
